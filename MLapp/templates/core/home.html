@@ -1,0 +1,47 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block css %}     
+    <link rel="stylesheet" href="{% static 'style/home.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div id="title">
+    <h1>Artist Identificator</h1>
+</div>
+<div class="d-flex justify-content-center  mt-10">
+
+    <div class="card mt-2  " style="width: 40rem;">
+        <div id="image_box">
+            <img width=500px  height=500px src="{% static 'images/blank.webp' %}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+        <h5 class="card-title"></h5>
+        <form  method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="forms-control {% if field.errors %} errors {% endif %} ">
+                <label>{{ form.artist.label_tag }}</label>
+                {{ form.artist.errors }}
+                {% render_field form.artist class="form-control"  name="artist" id="id_artist"%}
+            </div>
+            <div class="forms-control {% if field.errors %} errors {% endif %} ">
+                <label>{{ form.image.label_tag }}</label>
+                {{ form.image.errors }}
+                {% render_field form.image class="form-control"  name="image" id="id_image"%}
+            </div>
+            <div class="forms-control {% if field.errors %} errors {% endif %} ">
+                <label>{{ form.model.label_tag }}</label>
+                {{ form.model.errors }}
+                {% render_field form.model class="form-control"  name="model" id="id_model"%}
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </form>      
+        </div>
+    </div>
+
+</div>
+
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock content %}
