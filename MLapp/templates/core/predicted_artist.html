@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+    <h1>Predicted Artist: {{artist}}</h1>
+    <p>{{info}}</p>
+    <img src="{{ image_url }}" alt="Image of {{ artist }}">
+
+
+{% endblock content %} 

@@ -14,4 +14,4 @@ class Image(models.Model):
     model = models.CharField(max_length=50, choices=MODELS)
 
     def __str__(self) -> str:
-        return self.author
+        return self.artist

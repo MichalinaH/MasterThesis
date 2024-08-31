@@ -2,5 +2,9 @@ magisterka
 __pycache__
 db.sqlite3
 venvMagisterka
-data_painings
+data_paintings
 data
+media
+*.pkl
+*.gz
+*.h5
