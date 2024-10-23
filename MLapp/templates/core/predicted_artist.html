@@ -3,10 +3,42 @@
 
 {% load widget_tweaks %}
 
+{% block css%}
+<link rel="stylesheet" href="{% static 'style/predicted_artisct.css' %}">
+{% endblock css%}
+
+
 {% block content %}
-    <h1>Predicted Artist: {{artist}}</h1>
-    <p>{{info}}</p>
-    <img src="{{ image_url }}" alt="Image of {{ artist }}">
+    <div id="header">
+        <h1>Predicted Artist:</h1>
+        <h2>{{artist}}</h2>
+    </div>
+    
+    <div id="info">
+        
+        {% if artist == "Edgar Degas" %}
+        <img src="{% static 'images/Edgar_Degas.jpg' %}">
 
+        {% elif artist == "Claude Lorrain" %}
+        <img src="{% static 'images/Claude_Lorrain.jpg' %}">
 
+        {% elif artist == "Claude Monet" %}
+        <img src="{% static 'images/Claude_Monet.jpg' %}">
+
+        {% elif artist == "Edvard Munch" %}
+        <img src="{% static 'images/Edvard_Munch.jpg' %}">
+
+        {% elif artist == "Nicolas Poussin" %}
+        <img src="{% static 'images/Nicolas_Poussin.jpg' %}">
+
+        {% elif artist == "Auguste Renoir" %}
+        <img src="{% static 'images/Auguste_Renoir.jpg' %}">
+
+        {% elif artist == "Van Gogh" %}
+        <img src="{% static 'images/Van_Gogh.jpg' %}">
+        {% endif %}
+
+        <p>{{info}}</p>
+    </div>
+ 
 {% endblock content %} 

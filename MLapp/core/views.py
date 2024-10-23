@@ -43,7 +43,7 @@ def home(request):
                 # Predict the class of the image
                 predicted_class = loaded_model.predict(preprocessed_image)
 
-                labels = ['Degas', 'Lorrain', 'Claude Monet', 'Munch', 'Poussin', 'Renoir', 'Van Gogh']
+                labels = ['Edgar Degas', 'Claude Lorrain', 'Claude Monet', 'Edvard Munch', 'Nicolas Poussin', 'Auguste Renoir', 'Van Gogh']
                 predicted_artist = f"{labels[predicted_class[0]]}"
                 print(predicted_artist)
 
@@ -86,17 +86,17 @@ def get_infobox_image(artist):
         page = wikipedia.page(artist, auto_suggest=False)
         
         # Get the list of image URLs
-        images = page.images
+        # images = page.images
 
-        # Filter out images that are most likely in the infobox by checking common patterns
-        # This is a heuristic; exact selection may require more sophisticated parsing
-        infobox_image = None
-        for img in images:
-            if 'wikimedia' in img or 'thumb' in img:
-                infobox_image = img
-                break  # Assuming the first match is the infobox image
+        # # Filter out images that are most likely in the infobox by checking common patterns
+        # # This is a heuristic; exact selection may require more sophisticated parsing
+        # infobox_image = None
+        # for img in images:
+        #     if 'wikimedia' in img or 'thumb' in img:
+        #         infobox_image = img
+        #         break  # Assuming the first match is the infobox image
 
-        return infobox_image
+        # return infobox_image
 
     except wikipedia.exceptions.DisambiguationError as e:
         # Handle disambiguation error

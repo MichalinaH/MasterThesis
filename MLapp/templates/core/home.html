@@ -21,11 +21,11 @@
         <h5 class="card-title"></h5>
         <form  method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="forms-control {% if field.errors %} errors {% endif %} ">
+            <!-- <div class="forms-control {% if field.errors %} errors {% endif %} ">
                 <label>{{ form.artist.label_tag }}</label>
                 {{ form.artist.errors }}
                 {% render_field form.artist class="form-control"  name="artist" id="id_artist"%}
-            </div>
+            </div> -->
             <div class="forms-control {% if field.errors %} errors {% endif %} ">
                 <label>{{ form.image.label_tag }}</label>
                 {{ form.image.errors }}
