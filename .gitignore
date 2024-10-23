@@ -8,3 +8,4 @@ media
 *.pkl
 *.gz
 *.h5
+__pycache__
