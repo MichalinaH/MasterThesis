@@ -7,6 +7,7 @@ class Image(models.Model):
     MODELS = [
     ("RANDOM_FOREST", "Random Forest"),
     ("RESNET50", "ResNet50"),
+    ("VGG19", "Vgg19")
     ]
 
     artist = models.CharField(max_length=50, blank=True, null=True)
